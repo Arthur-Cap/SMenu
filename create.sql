@@ -1,0 +1,12 @@
+create table agency_account (created_at timestamp(6), deleted_at timestamp(6), id bigserial not null, user_name varchar(100) not null unique, agency_info_id varchar(255), password varchar(255), status varchar(255), primary key (id));
+create table agency_info (created_at timestamp(6), deleted_at timestamp(6), id bigserial not null, agency_name varchar(255) not null, avatar varchar(255), destination varchar(255), email varchar(255), phone_number varchar(255), primary key (id, agency_name));
+create table booking (created_at timestamp(6), deleted_at timestamp(6), id bigserial not null, item_id bigint, table_host_id bigint, payment_status varchar(255), primary key (id));
+create table department (created_at timestamp(6), deleted_at timestamp(6), id bigserial not null, shop_id bigint, map_view varchar(255), name varchar(255), primary key (id));
+create table invoice (charge numeric(38,2), tax numeric(38,2), created_at timestamp(6), deleted_at timestamp(6), id bigserial not null, shop_id bigint, creator varchar(255), primary key (id));
+create table item (price numeric(38,2), created_at timestamp(6), deleted_at timestamp(6), id bigserial not null, category varchar(255), creator_id varchar(255), description varchar(255), image_link varchar(255), name varchar(255), video varchar(255), primary key (id));
+create table menu (created_at timestamp(6), deleted_at timestamp(6), id bigserial not null, owner_id varchar(255), theme varchar(255), primary key (id));
+create table menu_content (status boolean, created_at timestamp(6), deleted_at timestamp(6), id bigserial not null, item_id varchar(255), menu_id varchar(255), primary key (id));
+create table participant (created_at timestamp(6), deleted_at timestamp(6), id bigserial not null, shop_id bigint, agency_id varchar(255), participant_status varchar(255), role varchar(255), primary key (id));
+create table shop (refresh_code_time time(6), created_at timestamp(6), deleted_at timestamp(6), id bigserial not null, access_code varchar(255), location varchar(255), name varchar(255), owner_id varchar(255), primary key (id));
+create table table_host (created_at timestamp(6), deleted_at timestamp(6), id bigserial not null, table_id bigint, primary key (id));
+create table table_slot (created_at timestamp(6), deleted_at timestamp(6), department_id bigint, id bigserial not null, primary key (id));

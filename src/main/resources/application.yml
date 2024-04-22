@@ -1,0 +1,28 @@
+spring:
+    application:
+        name: SMenu
+    datasource:
+        url: jdbc:postgresql://localhost:5432/postgres?createDatabaseIfNotExist=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;autoReconnect=true
+        username: postgres
+        password: 123456
+        driver-class-name: org.postgresql.Driver
+
+    jpa:
+        properties:
+            jakarta:
+                persistence:
+                    schema-generation:
+                        scripts:
+                            action: create
+                            create-target: create.sql
+                            create-source: metadata
+        hibernate:
+            ddl-auto=update:
+server:
+    port: 8080
+
+security:
+    jwt:
+        secret-key: 732yurhbj3%$^RT67YG^TYG84TGhu4#$3IOHJU4yftFV$%^&*6vtyFTGYTuyg435h)(*BTYgvHBG5T$%UYGHU56!@#$44655
+        expiration-time: 3600000
+

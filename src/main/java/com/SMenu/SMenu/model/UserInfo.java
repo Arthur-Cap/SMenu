@@ -8,12 +8,10 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "agencyInfo")
-public class AgencyInfo extends BaseModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String agencyName;
-    private String phoneNumber;
+@Table(name = "userInfo")
+public class UserInfo extends BaseModel {
+    private String name;
+    private Integer phoneNumber;
     private String email;
     private String destination;
     private String avatar;

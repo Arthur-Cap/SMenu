@@ -7,7 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class SMenuApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void huhu() {
+
 	}
 
 }

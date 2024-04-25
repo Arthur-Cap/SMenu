@@ -13,7 +13,7 @@ class SMenuApplicationTests {
 
 	@Test
 	void huhu() {
-		assertEquals(10, 10);
+		assertEquals(10, 12);
 	}
 
 }
